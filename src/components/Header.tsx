@@ -39,14 +39,9 @@ export const Header: React.FC = () => {
       </motion.div>
 
       {/* Main Phrase */}
-      <motion.h1
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-        className="text-[20px] sm:text-[22px] font-bold tracking-tight text-slate-900 leading-snug max-w-[360px]"
-      >
+      <h1 className="text-[20px] sm:text-[22px] font-bold tracking-tight text-slate-900 dark:text-white leading-snug max-w-[360px] transition-colors duration-300">
         {siteConfig.mainPhrase}
-      </motion.h1>
+      </h1>
     </header>
   );
 };

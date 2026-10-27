@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
 @layer base {
   :root {
     --font-sans: 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -12,18 +14,15 @@
   }
 
   body {
-    background-color: #f8fafc;
+    background-color: #070b0e;
+    color: #f1f5f9;
     min-height: 100vh;
     overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
-}
 
-/* Subtle pulse animation for online status badge if needed */
-@keyframes subtle-pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.75; transform: scale(0.97); }
-}
-
-.animate-subtle-pulse {
-  animation: subtle-pulse 3s ease-in-out infinite;
+  html[data-theme='light'] body {
+    background-color: #f8fafc;
+    color: #1e293b;
+  }
 }
